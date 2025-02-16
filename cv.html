@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    	    <link rel="stylesheet" href="style.css" />
-    <title> Ruhul Amin Bokshi - Curriculum Vitae</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Ruhul Amin Bokshi - Curriculum Vitae</title>
     <style>
         /* General Styles */
         body {
@@ -198,10 +198,92 @@
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0); }
         }
+
+        /* Navigation Bar Styles */
+        .nav {
+            position: relative;
+            width: 400px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .outline {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .rect {
+            stroke-dashoffset: 5;
+            stroke-dasharray: 0 0 10 40 10 40;
+            transition: 0.5s;
+            stroke: #fff;
+        }
+
+        .container {
+            position: absolute;
+            inset: 0;
+            background: #bef6;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0.5em;
+        }
+
+        .btn {
+            padding: 0.5em 1.5em;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+
+        .btn:hover {
+            background: #fff3;
+        }
+
+        .btn:nth-child(1):hover ~ svg .rect {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 0 2 8 73.3 8 10.7;
+        }
+
+        .btn:nth-child(2):hover ~ svg .rect {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 0 12.6 9.5 49.3 9.5 31.6;
+        }
+
+        .btn:nth-child(3):hover ~ svg .rect {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 0 24.5 8.5 27.5 8.5 55.5;
+        }
+
+        .btn:nth-child(4):hover ~ svg .rect {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 0 34.7 6.9 10.2 6.9 76;
+        }
+
+        .btn:hover ~ .outline .rect {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 0 0 10 40 10 40;
+            transition: 0.5s !important;
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
+    <div class="nav">
+        <div class="container">
+            <div class="btn">Home</div>
+            <div class="btn">Contact</div>
+            <div class="btn">About</div>
+            <div class="btn">FAQ</div>
+            <svg class="outline" overflow="visible" width="400" height="60" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+                <rect class="rect" pathLength="100" x="0" y="0" width="400" height="60" fill="transparent" stroke-width="5"></rect>
+            </svg>
+        </div>
+    </div>
 
+    <!-- CV Content -->
     <h1 class="title">Curriculum Vitae</h1>
     <h2> > Ruhul Amin Bokshi</h2>
     <p>Computer Science Enthusiast | Cybersecurity Learner | Graphic Designer</p>
@@ -273,6 +355,5 @@
             </ul>
         </div>
     </div>
-
 </body>
 </html>
